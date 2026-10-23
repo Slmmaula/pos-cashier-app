@@ -2,7 +2,7 @@
 
 A point-of-sale (POS) web app for cafes and restaurants, built with Next.js. It covers the cashier screen, inventory, transaction history, financial reports, expenses, and store settings.
 
-**Live demo:** [YOUR-LIVE-DEMO-URL](https://xyz-pos.vercel.app/)
+**Live demo:** [XYZ POS APP](https://xyz-pos.vercel.app/)
 
 ![Cashier screen](docs/screenshots/kasir.png)
 
