@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8f9fb;
+  --card: #ffffff;
+  --line: #e5e7eb;
+  --foreground: #111827;
+  --muted: #6b7280;
+  --placeholder: #9ca3af;
+  --surface: #f3f4f6;
+  --disabled: #c4c7cc;
+
+  --primary: #1a4b9b;
+  --primary-hover: #153f85;
+  --primary-soft: #e8f0fe;
+
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --danger-banner: #fef2f2;
+  --danger-border: #fca5a5;
+
+  --warning-bg: #fefce8;
+  --warning-border: #fde68a;
+  --warning-text: #854d0e;
+
+  --purple: #9333ea;
+  --purple-soft: #f3e8ff;
+
+  --pill: #4f7cac;
+  --navy: #0f2447;
+}
+
+.dark {
+  --background: #0b1220;
+  --card: #111a2e;
+  --line: #1f2a44;
+  --foreground: #f3f4f6;
+  --muted: #9ca3af;
+  --placeholder: #6b7280;
+  --surface: #1a2438;
+  --disabled: #374151;
+
+  --primary: #3b6fd1;
+  --primary-hover: #4d80e0;
+  --primary-soft: #14264d;
+
+  --success: #22c55e;
+  --success-soft: #0a2e1a;
+
+  --danger: #f87171;
+  --danger-soft: #3b1414;
+  --danger-banner: #2a1215;
+  --danger-border: #7f1d1d;
+
+  --warning-bg: #2a2410;
+  --warning-border: #713f12;
+  --warning-text: #fde68a;
+
+  --purple: #c084fc;
+  --purple-soft: #2e1065;
+
+  --pill: #4f7cac;
+  --navy: #0f2447;
+}
+
+@theme inline {
+  --font-sans: var(--font-app), ui-sans-serif, system-ui, sans-serif;
+
+  --color-page: var(--background);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-placeholder: var(--placeholder);
+  --color-surface: var(--surface);
+  --color-disabled: var(--disabled);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-banner: var(--danger-banner);
+  --color-danger-border: var(--danger-border);
+
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-border: var(--warning-border);
+  --color-warning-text: var(--warning-text);
+
+  --color-purple: var(--purple);
+  --color-purple-soft: var(--purple-soft);
+
+  --color-pill: var(--pill);
+  --color-navy: var(--navy);
+
+  --radius-card: 12px;
+  --radius-control: 8px;
+
+  --shadow-card: 0 1px 2px 0 rgb(16 24 40 / 0.05);
+  --shadow-modal: 0 12px 32px -4px rgb(16 24 40 / 0.18);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Cetak ===== */
+#print-root {
+  display: none;
+}
+
+@media print {
+  body:has(#print-root)>*:not(#print-root) {
+    display: none !important;
+  }
+
+  body:has(#print-root) #print-root {
+    display: block !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
